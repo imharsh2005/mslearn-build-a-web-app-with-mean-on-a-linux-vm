@@ -1,33 +1,34 @@
 var path = require('path');
-var Book = require('./model');
+var Contact = require('./model');
 var routes = function(app) {
-    app.get('/book', function(req, res) {
-        Book.find({}, function(err, result) {
+    app.get('/contact', function(req, res) {
+        Contact.find({}, function(err, result) {
             if ( err ) throw err;
             res.json(result);
         });
     });
-    app.post('/book', function(req, res) {
-        var book = new Book( {
+    app.post('/contact', function(req, res) {
+        var contact = new Contact( {
             name:req.body.name,
-            isbn:req.body.isbn,
-            author:req.body.author,
-            pages:req.body.pages
+            cid:req.body.id,
+            email:req.body.email,
+            message:req.body.message,
+            phone:req.body.phone            
         });
-        book.save(function(err, result) {
+        contact.save(function(err, result) {
             if ( err ) throw err;
             res.json( {
-                message:"Successfully added book",
-                book:result
+                message:"Successfully added contact",
+                contact:result
             });
         });
     });
-    app.delete("/book/:isbn", function(req, res) {
-        Book.findOneAndRemove(req.query, function(err, result) {
+    app.delete("/contact/:id", function(req, res) {
+        Contact.findOneAndRemove(req.query, function(err, result) {
             if ( err ) throw err;
             res.json( {
-                message: "Successfully deleted the book",
-                book: result
+                message: "Successfully deleted the contact!",
+                contact: result
             });
         });
     });

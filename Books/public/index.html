@@ -1,22 +1,32 @@
-<!doctype html>
+<!-- <!DOCTYPE html>
 <html ng-app="myApp" ng-controller="myCtrl">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <script src="script.js"></script>
+<title>MyApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This is a learning project app">
+<style>
+body {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+h2{text-align:center;font-family:Arial, sans-serif;color:#7c4670;background-color:#f8eded;}
+p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
+</style>
 </head>
 <body>
-    <div>
+<h2>My Blog App</h2>
+<p></p>
+<div>
     <table>
         <tr>
         <td>Name:</td>
         <td><input type="text" ng-model="Name"></td>
         </tr>
         <tr>
-        <td>Isbn:</td>
+        <td>Blog post Number:</td>
         <td><input type="text" ng-model="Isbn"></td>
         </tr>
         <tr>
-        <td>Author:</td>
+        <td>Post:</td>
         <td><input type="text" ng-model="Author"></td>
         </tr>
         <tr>
@@ -44,5 +54,96 @@
         </tr>
     </table>
     </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="script.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This is a learning project app">
+<link rel="stylesheet" href="script.css">
+<style>
+body {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
+p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#000000;background-color:#ffffff;}
+</style>
+</head>
+<body>
+
+<section id="contact">
+    <div class="contact-box">
+      <div class="contact-links">
+        <h2>CONTACTS</h2>
+        <div class="links">
+          <div class="link">
+            <a><img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="github"></a>
+          </div>
+          <div class="link">
+            <a><img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="codepen"></a>
+          </div>
+          <div class="link">
+            <a><img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrapper">
+        <form>
+          <div class="form-item">
+            <!-- <input type="text" name="email" required> -->
+            <label>Id:</label>
+            <input type="text" ng-model="Id" required>
+          </div>
+          
+          <div class="form-item">
+            <!-- <input type="text" name="sender" required> -->
+            <label>Name</label>  <input type="text" ng-model="Name" required>
+          </div>
+          <div class="form-item">
+            <!-- <input type="text" name="email" required> -->
+            <label>Email:</label><input type="text" ng-model="Email" >
+            
+          </div>
+          <div class="form-item">
+            <!-- <input type="text" name="email" required> -->
+            <label>Phone:</label><input type="text" ng-model="Phone" >
+            
+          </div>
+          <div class="form-item">
+            <!-- <input type="text" ng-model="Author"> -->
+            <label>Message:</label><textarea class="" ng-model="Message"></textarea>
+            
+          </div>
+          <!-- <button class="submit-btn">Send</button> -->
+          <button class="submit-btn" ng-click="add_contact()">Add</button>  
+        </form>
+      </div>
+       
+    </div>
+    <div class="contact-links">
+        <table id="tdata">
+            <tr>
+                <th>#</th>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            
+        </tr>
+            <tr ng-repeat="contact in contacts">
+                <td><button class="delete-btn" data-ng-click="del_contact(contact)">Delete</td>    
+                <td>{{contact.name}}</td>
+            <td>{{contact.cid}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.message}}</td>
+            </tr>
+        </table>
+        </div>  
+</section>
+
 </body>
 </html>

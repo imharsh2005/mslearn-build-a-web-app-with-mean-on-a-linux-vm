@@ -84,6 +84,14 @@ h2 {
   text-align: center;
   transform: scale(.95, 1);
 }
+h3 {
+  font-family: 'Arimo', sans-serif;
+  color: #fff;
+  font-size: clamp(10px, 6vw, 30px);
+  letter-spacing: 2px;
+  text-align: center;
+  transform: scale(.95, 1);
+}
 
 .links {
   display: flex;
@@ -155,18 +163,19 @@ label {
   top: 10px;
   left: 1%;
   color: #999;
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(14px, 1.5vw, 10px);
   pointer-events: none;
   user-select: none;
 }
 
-input, textarea {
+input, textarea { 
   width: 100%;
+  text-align: center;
   outline: 0;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 20px;
-  padding: 12px;
+  margin-bottom: 10px;
+  padding: 15px;
   font-size: clamp(15px, 1.5vw, 18px);
 }
 

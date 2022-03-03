@@ -198,11 +198,11 @@ textarea:valid+label {
 }
 
 .delete-btn {
-    background-color: #9cb2fc;
+    background-color: #6385f3;
     filter: drop-shadow(2px 2px 3px #0003);
     color: #fff;
     font-family: "Poppins",sans-serif;
-    font-size: clamp(10px, 1.6vw, 8px);
+    font-size: clamp(12px, 1.6vw, 8px);
     display: block;
     padding: 8px 10px;
     margin: 2px auto;
